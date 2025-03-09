@@ -72,6 +72,17 @@ header .container {
     padding: 15px;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
 .logo h1 {
     font-size: 1.8rem;
     font-weight: 700;
@@ -182,8 +193,9 @@ nav {
 /* Programs Section */
 .program-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
     gap: 30px;
+    justify-content: center; /*tag bort om dåligt utseende*/
 }
 
 .card {
@@ -347,6 +359,17 @@ footer {
 
 .map-placeholder .image-placeholder {
     height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 /* Media Queries */
@@ -403,5 +426,9 @@ footer {
     
     .social-icons {
         justify-content: center;
+    }
+    
+    .logo-img {
+        height: 30px;
     }
 }
