@@ -372,7 +372,7 @@ footer {
 }
 
 .map-placeholder .image-placeholder {
-    height: 500px;  /* Increased from 300px to 400px */
+    height: 350px;  /* Increased from 300px to 400px */
     position: relative;
     overflow: hidden;
 }
