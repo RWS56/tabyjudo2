@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
-    hamburger.addEventListener('click', function() {
+    // Function to open/close the menu
+    function toggleMenu() {
         // Toggle active class on nav links
         navLinks.classList.toggle('active');
         
@@ -22,12 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
             lines[1].style.opacity = '1';
             lines[2].style.transform = 'none';
         }
-    });
+    }
     
-    // Close mobile menu when a link is clicked
-    const navItems = document.querySelectorAll('.nav-links li a');
-    navItems.forEach(item => {
-        item.addEventListener('click', function() {
+    // Function to close the menu
+    function closeMenu() {
+        if (navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
             
             // Reset hamburger icon
@@ -36,7 +36,28 @@ document.addEventListener('DOMContentLoaded', function() {
             lines[0].style.transform = 'none';
             lines[1].style.opacity = '1';
             lines[2].style.transform = 'none';
-        });
+        }
+    }
+    
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent the document click from being triggered
+        toggleMenu();
+    });
+    
+    // Close mobile menu when a link is clicked
+    const navItems = document.querySelectorAll('.nav-links li a');
+    navItems.forEach(item => {
+        item.addEventListener('click', closeMenu);
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        // Check if menu is active and the click is outside the menu and hamburger
+        if (navLinks.classList.contains('active') && 
+            !navLinks.contains(e.target) && 
+            !hamburger.contains(e.target)) {
+            closeMenu();
+        }
     });
     
     // Smooth scrolling for anchor links
