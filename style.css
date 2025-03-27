@@ -693,6 +693,32 @@ footer {
     margin-bottom: 5px;
 }
 
+/* About Page Video Section */
+.about-video-container {
+    margin: 25px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-video {
+    width: 100%;
+    display: block;
+    background-color: #000;
+    aspect-ratio: 16 / 9;
+}
+
+.video-section {
+    background: linear-gradient(to right bottom, #fff, #f8f9fa);
+}
+
+/* Responsive adjustments for video */
+@media (max-width: 768px) {
+    .about-video {
+        aspect-ratio: 4 / 3;
+    }
+}
+
 /* Responsive adjustments for about page */
 @media (max-width: 768px) {
     .about-section {
