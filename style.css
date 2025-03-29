@@ -2,7 +2,7 @@
 
 :root {
     --primary-color: #286bc4;
-    /*#e63946*/
+    /*#e63946 gammal färg*/
     --secondary-color: #1d3557;
     --light-color: #f1faee;
     --dark-color: #1d3557;
@@ -53,12 +53,11 @@ ul {
 
 .btn:hover {
     background: #1d3557;
-    /*c1272d*/
+    /*c1272d (gammal färg)*/ 
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Header styles */
 header {
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -132,7 +131,6 @@ nav {
     transition: var(--transition);
 }
 
-/* Hero Section */
 #hero {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./bilder/IMG_2846.JPG') no-repeat center center/cover;
     color: white;
@@ -167,7 +165,6 @@ nav {
     margin-right: auto;
 }
 
-/* Section Styles */
 .section {
     padding: 80px 0;
 }
@@ -191,7 +188,6 @@ nav {
     background: var(--primary-color);
 }
 
-/* About Section */
 .about-content {
     display: flex;
     align-items: center;
@@ -207,7 +203,6 @@ nav {
     margin-bottom: 20px;
 }
 
-/* Programs Section */
 .program-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
@@ -235,7 +230,6 @@ nav {
     color: var(--secondary-color);
 }
 
-/* Instructors Section */
 .instructor-profiles {
     display: flex;
     flex-wrap: wrap;
@@ -252,7 +246,6 @@ nav {
     margin: 15px 0 5px;
 }
 
-/* Contact Section */
 .contact-content {
     display: flex;
     gap: 40px;
@@ -281,7 +274,6 @@ nav {
     width: 25px;
 }
 
-/* Footer Styles */
 footer {
     background-color: var(--dark-color);
     color: white;
@@ -357,7 +349,6 @@ footer {
     color: #aaa;
 }
 
-/* Image Placeholders */
 .image-placeholder {
     background-color: #e9ecef;
     border-radius: 10px;
@@ -382,8 +373,8 @@ footer {
 }
 
 .map-placeholder .image-placeholder {
+    /*Byt vid behov, beroende på antal (!kontaktinfo)*/
     height: 350px;
-    /* Increased from 300px to 400px */
     position: relative;
     overflow: hidden;
 }
@@ -397,7 +388,6 @@ footer {
     border: 0;
 }
 
-/* Media Queries */
 @media (max-width: 992px) {
     .about-content {
         flex-direction: column;
@@ -458,7 +448,6 @@ footer {
     }
 }
 
-/* Sign Up Page Styles */
 .signup-hero {
     padding: 100px 0 60px;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./bilder/IMG_31s95.JPG') no-repeat center center/cover;
@@ -590,7 +579,6 @@ footer {
     color: var(--secondary-color);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
 
     .step-card,
@@ -609,7 +597,6 @@ footer {
     }
 }
 
-/* About Page Specific Styles */
 .about-hero {
     padding: 80px 0 40px;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./bilder/IMG_31s95.JPG') no-repeat center center/cover;
@@ -693,7 +680,6 @@ footer {
     margin-bottom: 5px;
 }
 
-/* About Page Video Section */
 .about-video-container {
     margin: 25px 0;
     border-radius: 10px;
@@ -712,14 +698,12 @@ footer {
     background: linear-gradient(to right bottom, #fff, #f8f9fa);
 }
 
-/* Responsive adjustments for video */
 @media (max-width: 768px) {
     .about-video {
         aspect-ratio: 4 / 3;
     }
 }
 
-/* Responsive adjustments for about page */
 @media (max-width: 768px) {
     .about-section {
         padding: 20px;
