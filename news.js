@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const newsContainer = document.getElementById('news-container');
     const rssUrl = 'https://tabyjudo.se/Home/NewsRss'; //Behövs för att hämta RSS-flödet om vi vill använda laget fortsatt
-    const maxNewsItems = 3; // Maximala antal nyheter att visa
+    const maxNewsItems = 3; // Maximala antal nyheter att visa, laget verkar hålla det till 5
     
     // Fetch the RSS feed
     fetch(rssUrl)
@@ -29,22 +29,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 const link = item.querySelector('link')?.textContent || '#';
                 const description = item.querySelector('description')?.textContent || 'Ingen beskrivning tillgänglig.';
                 const pubDate = item.querySelector('pubDate')?.textContent || 'Inget datum tillgängligt.';
-
+                
+                const enclosure = item.querySelector('enclosure');
+                //om det är en bild
+                const imageUrl = enclosure && enclosure.getAttribute('type')?.startsWith('image/') ? enclosure.getAttribute('url') : null;
+                
                 const formattedDate = pubDate !== 'Inget datum tillgängligt.' ? new Date(pubDate).toLocaleDateString() : pubDate;
                 
-                // HTML ELEMENT
                 const newsItem = document.createElement('div');
                 newsItem.className = 'news-item';
-                newsItem.innerHTML = `
-                    <div class="news-title">
-                        ${title}
-                    </div>
-                    <div class="news-source">
-                        <a href="${link}" target="_blank">Läs mer <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                    <div class="news-date">${formattedDate}</div>
-                    <div class="news-description">${description}</div>
-                `;
+                
+                //skapa html div
+                let contentHtml = `
+                    <div class="news-content">
+                        <div class="news-title">
+                            ${title}
+                        </div>
+                        <div class="news-source">
+                            <a href="${link}" target="_blank">Läs mer <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <div class="news-date">${formattedDate}</div>
+                        <div class="news-description">${description}</div>
+                    </div>`;
+                
+                let imageHtml = '';
+                if (imageUrl) {
+                    imageHtml = `
+                    <div class="news-image">
+                        <img src="${imageUrl}" alt="${title}" loading="lazy">
+                    </div>`;
+                }
+                
+                newsItem.innerHTML = contentHtml + imageHtml;
                 
                 newsContainer.appendChild(newsItem);
             });
