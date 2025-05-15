@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const newsContainer = document.getElementById('news-container');
     const rssUrl = 'https://tabyjudo.se/Home/NewsRss'; //Behövs för att hämta RSS-flödet om vi vill använda laget fortsatt
-    const maxNewsItems = 3; // Maximala antal nyheter att visa, laget verkar hålla det till 5
+    const maxNewsItems = 3; // Maximala antal nyheter att visa
     
     // Fetch the RSS feed
     fetch(rssUrl)
@@ -32,7 +32,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const enclosure = item.querySelector('enclosure');
                 //om det är en bild
-                const imageUrl = enclosure && enclosure.getAttribute('type')?.startsWith('image/') ? enclosure.getAttribute('url') : null;
+                let imageUrl = enclosure && enclosure.getAttribute('type')?.startsWith('image/') ? enclosure.getAttribute('url') : null;
+
+                //Bilden finns i olika storlekar, där det anges filnamn_small, filnamn_medium, filnamn_large eller orginalet filnamn.jpg eller png vad det nu än är
+                //om det är en bild och den har _small, _medium eller _large i sig så ta bort det så att den inte blir suddigare än den behöver vara, så att man kan läsa innehåll vid behov
+                if (imageUrl) {
+                    const imageParts = imageUrl.split('_');
+                    if (imageParts.length > 1) {
+                        imageUrl = imageParts.slice(0, -1).join('_') + '.' + imageParts[imageParts.length - 1].split('.').pop();
+                        console.log(imageUrl);
+                    }
+                }
                 
                 const formattedDate = pubDate !== 'Inget datum tillgängligt.' ? new Date(pubDate).toLocaleDateString() : pubDate;
                 
@@ -56,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (imageUrl) {
                     imageHtml = `
                     <div class="news-image">
-                        <img src="${imageUrl}" alt="${title}" loading="lazy">
+                        <a href='${imageUrl}' target='blank'><img src="${imageUrl}" alt="${title}" loading="lazy"></a>
                     </div>`;
                 }
                 

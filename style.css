@@ -155,6 +155,9 @@ nav {
     color: white;
     padding: 120px 0;
     text-align: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
 }
 
 #about-hero {
@@ -162,6 +165,9 @@ nav {
     color: white;
     padding: 120px 0;
     text-align: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
 }
 
 #signup-hero {
@@ -169,6 +175,9 @@ nav {
     color: white;
     padding: 120px 0;
     text-align: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-content h2 {
@@ -480,6 +489,9 @@ footer {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./bilder/IMG_31s95.JPG') no-repeat center center/cover;
     color: white;
     text-align: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
 }
 
 .signup-hero .section-title {
@@ -630,6 +642,9 @@ footer {
     color: white;
     text-align: center;
     margin-bottom: 30px;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
 }
 
 .about-hero .section-title {
@@ -897,6 +912,10 @@ footer {
     
     .news-content {
         width: 100%;
+    }
+
+    #hero, #about-hero, #signup-hero, .signup-hero, .about-hero {
+        background-attachment: scroll;
     }
 }
 
