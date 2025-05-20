@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     const imageParts = imageUrl.split('_');
                     if (imageParts.length > 1) {
                         imageUrl = imageParts.slice(0, -1).join('_') + '.' + imageParts[imageParts.length - 1].split('.').pop();
-                        console.log(imageUrl);
                     }
                 }
                 
@@ -56,11 +55,13 @@ document.addEventListener('DOMContentLoaded', function() {
                             ${title}
                         </div>
                         <div class="news-source">
-                            <a href="${link}" target="_blank">Läs mer <i class="fas fa-external-link-alt"></i></a>
+                            <a href="${link}" target="_blank">Se orginal <i class="fas fa-external-link-alt"></i></a>
+                            ${imageUrl ? `<br><a href="${imageUrl}" target="_blank">Visa bilaga<i class="fas fa-external-link-alt"></i></a>` : ''}
                         </div>
                         <div class="news-date">${formattedDate}</div>
                         <div class="news-description">${description}</div>
                     </div>`;
+
                 
                 let imageHtml = '';
                 if (imageUrl) {

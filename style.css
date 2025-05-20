@@ -2,7 +2,6 @@
 
 :root {
     --primary-color: #286bc4;
-    /*#e63946 gammal färg*/
     --secondary-color: #1d3557;
     --light-color: #f1faee;
     --dark-color: #1d3557;
@@ -72,7 +71,6 @@ p, h1, h2, h3, h4, h5, h6, a, div, span {
 
 .btn:hover {
     background: #1d3557;
-    /*c1272d (gammal färg)*/ 
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -150,48 +148,7 @@ nav {
     transition: var(--transition);
 }
 
-#hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./bilder/IMG_2846.JPG') no-repeat center center/cover;
-    color: white;
-    padding: 120px 0;
-    text-align: center;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
-}
-
-#about-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./bilder/IMG_2846.JPG') no-repeat center center/cover;
-    color: white;
-    padding: 120px 0;
-    text-align: center;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
-}
-
-#signup-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./bilder/IMG_2846.JPG') no-repeat center center/cover;
-    color: white;
-    padding: 120px 0;
-    text-align: center;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-content h2 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
+/* Hero content styles handled in the hero section styling */
 
 .section {
     padding: 80px 0;
@@ -231,47 +188,101 @@ nav {
     margin-bottom: 20px;
 }
 
-.program-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
-    gap: 30px;
-    justify-content: center;
-    /*tag bort om dåligt utseende*/
+/* Groups preview styling */
+.groups-preview {
+    max-width: 800px;
+    margin: 0 auto 30px;
 }
 
-.card {
-    background: white;
-    border-radius: 10px;
-    padding: 25px;
+.group-category-preview h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.group-items-preview {
+    list-style: none;
+}
+
+.group-items-preview .group-item {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--primary-color);
+    padding: 12px 20px;
+    margin-bottom: 12px;
     transition: var(--transition);
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.group-items-preview .group-item:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
 }
 
-.card h3 {
-    margin: 15px 0;
-    color: var(--secondary-color);
-}
-
-.instructor-profiles {
+/* Groups list styling */
+.groups-list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
 }
 
-.profile {
-    text-align: center;
-    flex-basis: 250px;
+.group-category {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 20px;
 }
 
-.profile h3 {
-    margin: 15px 0 5px;
+.group-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.group-items {
+    list-style: none;
+}
+
+.group-item {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--primary-color);
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+.group-item:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.group-header h4 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+.group-time {
+    color: var(--accent-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.group-time i {
+    margin-right: 5px;
+}
+
+.group-description p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0;
 }
 
 .contact-content {
@@ -409,7 +420,6 @@ footer {
 }
 
 .map-placeholder .image-placeholder {
-    /*Byt vid behov, beroende på antal (!kontaktinfo)*/
     height: 350px;
     position: relative;
     overflow: hidden;
@@ -422,6 +432,121 @@ footer {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+/* Hero section styling */
+#hero, 
+.about-hero, 
+.signup-hero {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+#hero::before, 
+.about-hero::before, 
+.signup-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#hero .container, 
+.about-hero .container, 
+.signup-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+#hero {
+    background-image: url('./bilder/hero.png');
+}
+
+#about-hero {
+    background-image: url('./bilder/hero.png');
+}
+
+#groups-hero {
+    background-image: url('./bilder/hero.png');
+}
+
+#signup-hero {
+    background-image: url('./bilder/hero.png');
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Update existing hero-content styling */
+.hero-content h2, 
+.about-hero h1, 
+.signup-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p, 
+.about-intro, 
+.signup-intro {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Hero styles for mobile */
+    #hero, 
+    .about-hero, 
+    .signup-hero {
+        height: 350px;
+        padding: 20px 0;
+    }
+    
+    .hero-content h2, 
+    .about-hero h1, 
+    .signup-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p, 
+    .about-intro, 
+    .signup-intro {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+#hero .section-title,
+.about-hero .section-title,
+.signup-hero .section-title {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#hero .section-title::after,
+.about-hero .section-title::after,
+.signup-hero .section-title::after {
+    background: white;
 }
 
 @media (max-width: 992px) {
@@ -464,11 +589,7 @@ footer {
 
     .nav-links a {
         font-size: 1.2rem;
-    }
-
-    .hero-content h2 {
-        font-size: 2.2rem;
-    }
+    }    /* Hamburger styles and other mobile styles */
 
     .footer-content>div {
         flex-basis: 100%;
@@ -482,23 +603,56 @@ footer {
     .logo-img {
         height: 30px;
     }
+    
+    .step-card,
+    .fee-card {
+        min-width: 100%;
+    }
+
+    .info-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info-item i {
+        margin-bottom: 15px;
+    }
+    
+    .about-section {
+        padding: 20px;
+    }
+
+    .about-fees {
+        flex-direction: column;
+    }
+    
+    .about-video {
+        aspect-ratio: 4 / 3;
+    }
+    
+    .news-grid {
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    .news-item {
+        padding: 20px;
+        flex-direction: column;
+    }
+    
+    .news-image {
+        max-height: 200px;
+        margin: 15px 0;
+        max-width: 100%;
+    }
+    
+    .news-content {
+        width: 100%;
+    }
 }
 
-.signup-hero {
-    padding: 100px 0 60px;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./bilder/IMG_31s95.JPG') no-repeat center center/cover;
-    color: white;
-    text-align: center;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
-}
-
-.signup-hero .section-title {
-    color: white;
-}
-
-.signup-intro {
+.groups-intro, .signup-intro, .about-intro {
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.2rem;
@@ -618,45 +772,7 @@ footer {
     color: var(--secondary-color);
 }
 
-@media (max-width: 768px) {
-
-    .step-card,
-    .fee-card {
-        min-width: 100%;
-    }
-
-    .info-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .info-item i {
-        margin-bottom: 15px;
-    }
-}
-
-.about-hero {
-    padding: 80px 0 40px;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./bilder/IMG_31s95.JPG') no-repeat center center/cover;
-    color: white;
-    text-align: center;
-    margin-bottom: 30px;
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
-}
-
-.about-hero .section-title {
-    color: white;
-    margin-bottom: 20px;
-}
-
-.about-hero .about-intro {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.2rem;
-}
+/* Hero styles for About and Groups pages - now handled in the hero section styling */
 
 .about-section {
     margin-bottom: 50px;
@@ -735,26 +851,11 @@ footer {
     background-color: #000;
     height: auto;
     min-height: 200px;
+    max-height: 250px;
 }
 
 .video-section {
     background: linear-gradient(to right bottom, #fff, #f8f9fa);
-}
-
-@media (max-width: 768px) {
-    .about-video {
-        aspect-ratio: 4 / 3;
-    }
-}
-
-@media (max-width: 768px) {
-    .about-section {
-        padding: 20px;
-    }
-
-    .about-fees {
-        flex-direction: column;
-    }
 }
 
 .news-grid {
@@ -909,31 +1010,7 @@ footer {
         margin: 15px 0;
         max-width: 100%;
     }
-    
-    .news-content {
+      .news-content {
         width: 100%;
     }
-
-    #hero, #about-hero, #signup-hero, .signup-hero, .about-hero {
-        background-attachment: scroll;
-    }
-}
-
-.about-section img, 
-.card img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-.url-display {
-    max-width: 100%;
-    overflow-wrap: break-word;
-    word-break: break-all;
-    padding: 8px 12px;
-    background-color: #f5f5f5;
-    border-radius: 5px;
-    margin: 8px 0;
-    font-family: monospace;
-    font-size: 0.9em;
 }
