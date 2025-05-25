@@ -194,14 +194,6 @@ nav {
     margin: 0 auto 30px;
 }
 
-.group-category-preview h3 {
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-    font-weight: 600;
-    text-align: center;
-}
-
 .group-items-preview {
     list-style: none;
 }
@@ -506,7 +498,8 @@ footer {
 
 .hero-content p, 
 .about-intro, 
-.signup-intro {
+.signup-intro,
+#home-intro {
     font-size: 1.2rem;
     margin-bottom: 30px;
     max-width: 600px;
@@ -1027,7 +1020,23 @@ footer {
         margin: 15px 0;
         max-width: 100%;
     }
-      .news-content {
+    
+    .news-content {
+        width: 100%;
+    }
+
+    /* Group header styles for mobile devices */
+    .group-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .group-header h4 {
+        margin-bottom: 5px;
+    }
+    
+    .group-time {
+        display: block;
         width: 100%;
     }
 }
